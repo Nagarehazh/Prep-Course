@@ -67,7 +67,7 @@ function tienenMismaLongitud(str1, str2) {
   // Devuelve "true" si las dos strings tienen la misma longitud
   // De lo contrario, devuelve "false"
   // Tu código:
-  return str1 == str2;
+  return str1.length == str2.length;
 }
 
 function menosQueNoventa(num) {
@@ -146,10 +146,14 @@ function esPositivo(numero) {
   //Si el número es positivo, devolver ---> "Es positivo"
   //Si el número es negativo, devolver ---> "Es negativo"
   //Si el número es 0, devuelve false
-  if (numero > 0) {
+  if (numero == 0){
+    return false;
+  } else if (numero > 0) {
     return "Es positivo";
-  }
-  return "Es negativo";
+  } else if (numero < 0) {
+    return "Es negativo";
+  } 
+  
 }
 
 function agregarSimboloExclamacion(str) {
@@ -170,7 +174,7 @@ function obtenerSaludo(nombre) {
   // Toma la string "nombre" y concatena otras string en la cadena para que tome la siguiente forma:
   // "Martin" -> "Hola Martin!"
   // Tu código:
-  return nombre + "->" + "Hola " + nombre + "!";
+  return "Hola " + nombre + "!";
 }
 
 function obtenerAreaRectangulo(alto, ancho) {
@@ -208,10 +212,13 @@ function esVocal(letra){
   //que no se puede procesar el dato mediante el mensaje "Dato incorrecto".
   // Si no es vocal, tambien debe devolver "Dato incorrecto".
   //Escribe tu código aquí
-  if (letra.length == 1){
-    if (letra == "a" || letra || "A" letra == "e" || letra || "E" || letra == "i" || letra || "I" || letra == "o" || letra || "O" || letra == "u" || letra || "U"){
+  if (letra.length > 1){
+    return "Dato incorrecto";
+  } 
+  
+  if (letra == "a" || letra == "e" || letra == "i" || letra == "o" || letra == "u"){
       return "Es vocal";
-    }  
+    
   }
   return "Dato incorrecto";
 }
